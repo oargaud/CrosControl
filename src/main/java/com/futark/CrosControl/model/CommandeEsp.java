@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Auteur {
+public class CommandeEsp {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,15 +14,14 @@ public class Auteur {
 
     private String name;
 
-    private String firstname;
+    private boolean status;
 
-
-    public Auteur() {
+    public CommandeEsp() {
     }
 
-    public Auteur(String name, String firstname) {
+    public CommandeEsp(String name, boolean status) {
         this.name = name;
-        this.firstname = firstname;
+        this.status = status;
     }
 
     public Long getId() {
@@ -41,13 +40,11 @@ public class Auteur {
         this.name = name;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
-
-
 }
