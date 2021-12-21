@@ -13,25 +13,35 @@ public class BD {
     private String title;
 
     @ManyToMany
-    private List<Auteur> auteurList;
+    private List<Artiste> scenaristes;
 
-    private String edition;
+    @ManyToMany
+    private List<Artiste> illustrateurs;
+
+    @ManyToOne
+    private Edition edition;
 
     @ManyToOne
     private Saga saga;
 
     private String tome;
 
+    @Lob
+    @Column(length=100000)
+    private byte[] photo;
+
 
     public BD() {
     }
 
-    public BD(String title, List<Auteur> auteurList, String edition, Saga saga, String tome) {
+    public BD(String title, List<Artiste> scenaristes, List<Artiste> illustrateurs, Edition edition, Saga saga, String tome, byte[] photo) {
         this.title = title;
-        this.auteurList = auteurList;
+        this.scenaristes = scenaristes;
+        this.illustrateurs = illustrateurs;
         this.edition = edition;
         this.saga = saga;
         this.tome = tome;
+        this.photo = photo;
     }
 
     public Long getId() {
@@ -50,19 +60,27 @@ public class BD {
         this.title = title;
     }
 
-    public List<Auteur> getAuteurList() {
-        return auteurList;
+    public List<Artiste> getScenaristes() {
+        return scenaristes;
     }
 
-    public void setAuteurList(List<Auteur> auteurList) {
-        this.auteurList = auteurList;
+    public void setScenaristes(List<Artiste> scenaristes) {
+        this.scenaristes = scenaristes;
     }
 
-    public String getEdition() {
+    public List<Artiste> getIllustrateurs() {
+        return illustrateurs;
+    }
+
+    public void setIllustrateurs(List<Artiste> illustrateurs) {
+        this.illustrateurs = illustrateurs;
+    }
+
+    public Edition getEdition() {
         return edition;
     }
 
-    public void setEdition(String edition) {
+    public void setEdition(Edition edition) {
         this.edition = edition;
     }
 
@@ -80,5 +98,13 @@ public class BD {
 
     public void setTome(String tome) {
         this.tome = tome;
+    }
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
     }
 }

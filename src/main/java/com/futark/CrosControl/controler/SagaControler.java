@@ -1,8 +1,8 @@
 package com.futark.CrosControl.controler;
 
 
-import com.futark.CrosControl.model.BD;
-import com.futark.CrosControl.repository.BDRepository;
+import com.example.vladtest.model.Saga;
+import com.example.vladtest.repository.SagaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,18 +16,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/bd")
-public class BDControler {
+@RequestMapping(value = "/saga")
+public class SagaControler {
 
 
 
     @Autowired
-    public BDRepository bdRepository;
+    public SagaRepository sagaRepository;
 
     @PostMapping("/create")
-    public BD createBd(@RequestBody BD bd){
+    public Saga createSaga(@RequestBody Saga saga){
 
-        return bdRepository.save(bd);
+        return sagaRepository.save(saga);
     }
 
 
@@ -39,8 +39,8 @@ public class BDControler {
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<List<BD>> getALL(){
-        return new ResponseEntity<>(bdRepository.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Saga>> getALL(){
+        return new ResponseEntity<>(sagaRepository.findAll(), HttpStatus.OK);
     }
 
 }

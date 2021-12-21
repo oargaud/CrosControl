@@ -47,8 +47,6 @@ public class MQTTService {
 
     public void subscribe(IMqttClient client,String url) throws InterruptedException, MqttException {
 
-
-
         CountDownLatch receivedSignal = new CountDownLatch(10);
         client.subscribe(url, (topic, msg) -> {
             byte[] payload = msg.getPayload();

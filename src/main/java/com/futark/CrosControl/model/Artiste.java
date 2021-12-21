@@ -6,22 +6,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Auteur {
+public class Artiste {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    private String lastname;
 
     private String firstname;
 
 
-    public Auteur() {
+    public Artiste() {
     }
 
-    public Auteur(String name, String firstname) {
-        this.name = name;
+    public Artiste(String name, String firstname) {
+        this.lastname = name;
         this.firstname = firstname;
     }
 
@@ -33,12 +33,12 @@ public class Auteur {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getFirstname() {

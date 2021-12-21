@@ -1,5 +1,6 @@
 package com.futark.CrosControl.repository;
 
+
 import com.futark.CrosControl.model.BD;
 import org.springframework.data.jpa.repository.JpaRepository;
 
