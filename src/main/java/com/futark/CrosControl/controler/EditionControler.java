@@ -2,8 +2,8 @@ package com.futark.CrosControl.controler;
 
 
 
-import com.example.vladtest.model.Edition;
-import com.example.vladtest.repository.EditionRepository;
+import com.futark.CrosControl.model.Edition;
+import com.futark.CrosControl.repository.EditionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

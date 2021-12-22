@@ -1,8 +1,9 @@
 package com.futark.CrosControl.controler;
 
 
-import com.example.vladtest.model.Artiste;
-import com.example.vladtest.repository.ArtisteRepository;
+
+import com.futark.CrosControl.model.Artiste;
+import com.futark.CrosControl.repository.ArtisteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

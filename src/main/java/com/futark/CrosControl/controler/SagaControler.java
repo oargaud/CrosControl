@@ -1,8 +1,8 @@
 package com.futark.CrosControl.controler;
 
 
-import com.example.vladtest.model.Saga;
-import com.example.vladtest.repository.SagaRepository;
+import com.futark.CrosControl.model.Saga;
+import com.futark.CrosControl.repository.SagaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -25,9 +25,9 @@ public class SagaControler {
     public SagaRepository sagaRepository;
 
     @PostMapping("/create")
-    public Saga createSaga(@RequestBody Saga saga){
+    public ResponseEntity<Saga> createSaga(@RequestBody Saga saga){
 
-        return sagaRepository.save(saga);
+        return new ResponseEntity(sagaRepository.save(saga), HttpStatus.OK);
     }
 
 
@@ -40,6 +40,7 @@ public class SagaControler {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<List<Saga>> getALL(){
+
         return new ResponseEntity<>(sagaRepository.findAll(), HttpStatus.OK);
     }
 
