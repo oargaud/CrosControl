@@ -8,9 +8,11 @@
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-          Open modal
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newBdModal">
+          Nouvelle BD
         </button>
+
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">Link</a>
         </li>
@@ -20,6 +22,7 @@
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0)">Link</a>
         </li>
+
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="text" placeholder="Search">
@@ -30,16 +33,70 @@
 </nav>
 
 
-<p>bd works!</p>
-<div class="container-fluid">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- The Modal nouvelle BD-->
+<div class="modal fade" id="newBdModal" data-bs-backdrop="static" data-bs-keyboard="false">
+  <app-bd-form></app-bd-form>
 </div>
 
 
-
-
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false">
+<!-- The Modal nouvel artiste-->
+<div class="modal fade" id="newArtisteModal" data-bs-backdrop="static" data-bs-keyboard="false">
   <app-artist-form></app-artist-form>
 </div>
+
+<!-- The Modal nouvelle edition-->
+<div class="modal fade" id="newEditionModal" data-bs-backdrop="static" data-bs-keyboard="false">
+  <app-edition-form></app-edition-form>
+</div>
+<!-- The Modal nouvelle saga-->
+<div class="modal fade" id="newSagaModal" data-bs-backdrop="static" data-bs-keyboard="false">
+  <app-saga-form></app-saga-form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

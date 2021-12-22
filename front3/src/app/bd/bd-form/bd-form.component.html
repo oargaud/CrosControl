@@ -1,1 +1,100 @@
-<p>bd-form works!</p>
+
+<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header ">
+      <h4 class="modal-title">Formulaire nouvelle BD</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+
+
+
+      <div class="form-floating my-3">
+        <input type="text" class="form-control" id="title" placeholder="Titre" name="title">
+        <label for="title">Titre</label>
+      </div>
+
+
+      <div class="form-floating my-3">
+        <input type="text" class="form-control" id="tome" placeholder="Tome" name="tome">
+        <label for="tome">Tome</label>
+      </div>
+
+
+
+
+      <div class="input-group form-floating my-3">
+        <select class="form-select" id="saga" name="saga">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+        <label for="saga" class="form-label">Saga:</label>
+        <button class="btn btn-outline-primary w-25" data-bs-target="#newSagaModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvelle saga</button>
+      </div>
+
+
+
+
+      <div class="input-group form-floating my-3">
+        <select class="form-select" id="edition" name="edition">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+        <label for="edition" class="form-label">Edition:</label>
+        <button class="btn btn-outline-primary w-25" data-bs-target="#newEditionModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvelle édition</button>
+      </div>
+
+
+
+
+<!--      <div class="form-floating my-3">-->
+<!--        <select class="form-select" id="edition" name="edition">-->
+<!--          <option>1</option>-->
+<!--          <option>2</option>-->
+<!--          <option>3</option>-->
+<!--          <option>4</option>-->
+<!--        </select>-->
+<!--        <label for="edition" class="form-label">Selectionnez une édition:</label>-->
+<!--        <button class="btn btn-outline-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>-->
+<!--      </div>-->
+<!--      -->
+<!--      -->
+<!--      -->
+<!--      -->
+<!--      <div class="form-floating my-3">-->
+<!--        <select class="form-select" id="edition" name="edition">-->
+<!--          <option>1</option>-->
+<!--          <option>2</option>-->
+<!--          <option>3</option>-->
+<!--          <option>4</option>-->
+<!--        </select>-->
+<!--        <label for="edition" class="form-label">Selectionnez une édition:</label>-->
+<!--        <button class="btn btn-outline-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>-->
+<!--      </div>-->
+
+
+
+
+
+
+<!--      <div>-->
+<!--        <button class="btn btn-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>-->
+<!--      </div>-->
+
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer ">
+      <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Valider</button>
+    </div>
+
+  </div>
+</div>

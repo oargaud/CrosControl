@@ -8,6 +8,8 @@ import { ControlComponent } from './control/control.component';
 import { HomeComponent } from './home/home.component';
 import { ArtistFormComponent } from './bd/artist-form/artist-form.component';
 import { BdFormComponent } from './bd/bd-form/bd-form.component';
+import { SagaFormComponent } from './bd/saga-form/saga-form.component';
+import { EditionFormComponent } from './bd/edition-form/edition-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { BdFormComponent } from './bd/bd-form/bd-form.component';
     ControlComponent,
     HomeComponent,
     ArtistFormComponent,
-    BdFormComponent
+    BdFormComponent,
+    SagaFormComponent,
+    EditionFormComponent
   ],
   imports: [
     BrowserModule,
