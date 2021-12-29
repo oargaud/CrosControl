@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { ArtistFormComponent } from './bd/artist-form/artist-form.component';
 import { BdFormComponent } from './bd/bd-form/bd-form.component';
 import { SagaFormComponent } from './bd/saga-form/saga-form.component';
 import { EditionFormComponent } from './bd/edition-form/edition-form.component';
+import { BdListComponent } from './bd/bd-list/bd-list.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,12 @@ import { EditionFormComponent } from './bd/edition-form/edition-form.component';
     ArtistFormComponent,
     BdFormComponent,
     SagaFormComponent,
-    EditionFormComponent
+    EditionFormComponent,
+    BdListComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
