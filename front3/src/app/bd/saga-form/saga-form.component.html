@@ -9,17 +9,27 @@
 
     <!-- Modal body -->
     <div class="modal-body">
-
-      <div class="form-floating mt-3 mb-3">
-        <input type="text" class="form-control" id="lastname" placeholder="Nom" name="lastname">
-        <label for="lastname">Nom</label>
-      </div>
-
+      <form [formGroup]="sagaForm">
+        <div class="form-floating mt-3 mb-3">
+          <input type="text" class="form-control" id="name" placeholder="Nom" formControlName="name">
+          <label for="name">Nom</label>
+        </div>
+      </form>
     </div>
+
+<!--    <p>Value: {{ sagaForm.value }}</p>-->
+<!--    <p>Form Status: {{ sagaForm.status }}</p>-->
 
     <!-- Modal footer -->
     <div class="modal-footer">
-      <button class="btn btn-outline-success" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Valider saga</button>
+      <button (click)="validForm()"
+              [disabled]="!sagaForm.valid"
+              [ngClass]="sagaForm.valid ? 'btn btn-outline-success': 'btn btn-outline-danger'"
+              data-bs-target="#newBdModal"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal">
+        Valider saga
+      </button>
     </div>
 
   </div>
