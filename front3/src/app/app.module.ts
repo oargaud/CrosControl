@@ -14,6 +14,8 @@ import { BdFormComponent } from './bd/bd-form/bd-form.component';
 import { SagaFormComponent } from './bd/saga-form/saga-form.component';
 import { EditionFormComponent } from './bd/edition-form/edition-form.component';
 import { BdListComponent } from './bd/bd-list/bd-list.component';
+import { ChatComponent } from './chat/chat.component';
+import { PhotoComponent } from './photo/photo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { BdListComponent } from './bd/bd-list/bd-list.component';
     BdFormComponent,
     SagaFormComponent,
     EditionFormComponent,
-    BdListComponent
+    BdListComponent,
+    ChatComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,
