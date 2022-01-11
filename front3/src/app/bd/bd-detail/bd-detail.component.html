@@ -1,0 +1,32 @@
+<p>bd-detail works!</p>
+
+<button class="btn btn-outline-primary">EDITER</button>
+
+<h1>Titre :  {{bd.title}}</h1>
+
+
+<h1>Tome :  {{bd.tome}}</h1>
+
+
+<h1>Saga :  {{bd.saga.name}}</h1>
+
+
+<h1>Edition :  {{bd.edition.name}}</h1>
+
+
+
+<div class="row">
+  <div class="col-4 mx-auto">
+<!--    <img *ngIf="bd.photo" [src]="retrievedImage" class="w-100">-->
+    <img *ngIf="bd.photo" [src]="'data:image/jpeg;base64,' + bd.photo" class="w-100">
+
+  </div>
+</div>
+
+
+        <div *ngIf="bd.photo">
+          <p>le fichier n'est pas null</p>
+        </div>
+        <div  *ngIf="!bd.photo">
+          <p>le fichier est null</p>
+        </div>

@@ -10,7 +10,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebSocketHandler extends TextWebSocketHandler {
+public class CrosWebSocketHandler extends TextWebSocketHandler {
 
     private final List<WebSocketSession> webSocketSessions = new ArrayList<>();
 

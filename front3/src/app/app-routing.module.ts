@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { BdComponent } from './bd/bd.component';
 import { ChatComponent } from './chat/chat.component';
 import { PhotoComponent } from './photo/photo.component';
-
+import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
 
 
 const routes: Routes = [
@@ -16,7 +16,8 @@ const routes: Routes = [
 { path: 'control', component: ControlComponent},
 { path: 'bd', component: BdComponent},
 { path: 'chat', component: ChatComponent},
-{ path: 'photo', component: PhotoComponent}
+{ path: 'photo', component: PhotoComponent},
+{ path: 'detail/:id', component: BdDetailComponent }
 ];
 
 

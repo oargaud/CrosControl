@@ -1,6 +1,7 @@
 package com.futark.CrosControl.controler;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.futark.CrosControl.model.BD;
 import com.futark.CrosControl.repository.BDRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "/bd")
@@ -24,13 +25,44 @@ public class BDControler {
     @Autowired
     public BDRepository bdRepository;
 
-    @PostMapping("/create")
-    public BD createBd(@RequestBody BD bd){
 
-        return bdRepository.save(bd);
+
+//    @PostMapping("/create")
+//    public ResponseEntity<BD> createBd(@RequestBody BD bd){
+//
+//        return new ResponseEntity(bdRepository.save(bd), HttpStatus.OK);
+//    }
+
+
+    @PostMapping("/create")
+    public ResponseEntity<BD> createBd(@RequestParam("photo") Optional<MultipartFile> photo, @RequestParam String bd) throws IOException {
+
+
+        BD newbd = new ObjectMapper().readValue(bd, BD.class);
+
+        newbd.setPhoto(photo.get().getBytes());
+
+        return new ResponseEntity(bdRepository.save(newbd), HttpStatus.OK);
     }
 
 
+    @RequestMapping(
+            value = "/del/{id}",
+            method = RequestMethod.DELETE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public void delBd(@PathVariable(value = "id") Long id){
+        bdRepository.deleteById(id);
+    }
+
+    @RequestMapping(
+            value = "/{id}",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<BD> getBd(@PathVariable(value = "id") Long id){
+        return new ResponseEntity(bdRepository.findById(id), HttpStatus.OK);
+    }
 
 
 

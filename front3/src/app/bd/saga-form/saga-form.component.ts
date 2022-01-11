@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtistDto , EditionDto , SagaDto } from '../../model/model'
-import { BdService } from '../../service/bd.service'
+import { ArtistDto , EditionDto , SagaDto } from '../../model/model';
+import { BdService } from '../../service/bd.service';
 
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 

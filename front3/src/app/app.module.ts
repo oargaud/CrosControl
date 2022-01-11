@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,6 +16,7 @@ import { EditionFormComponent } from './bd/edition-form/edition-form.component';
 import { BdListComponent } from './bd/bd-list/bd-list.component';
 import { ChatComponent } from './chat/chat.component';
 import { PhotoComponent } from './photo/photo.component';
+import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,15 @@ import { PhotoComponent } from './photo/photo.component';
     EditionFormComponent,
     BdListComponent,
     ChatComponent,
-    PhotoComponent
+    PhotoComponent,
+    BdDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

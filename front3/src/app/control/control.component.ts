@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlComponent implements OnInit {
 
+//  signup = new FormGroup({
+//     email: new FormControl(null, Validators.required),
+//     image: new FormControl(null, [Validators.required, requiredFileType('png')])
+//   });
+
+
   constructor() { }
 
   ngOnInit(): void {

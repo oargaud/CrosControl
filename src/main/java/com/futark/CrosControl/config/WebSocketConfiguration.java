@@ -1,7 +1,7 @@
 package com.futark.CrosControl.config;
 
 
-import com.futark.CrosControl.handler.WebSocketHandler;
+import com.futark.CrosControl.handler.CrosWebSocketHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
@@ -12,7 +12,7 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @EnableWebSocket
 public class WebSocketConfiguration implements WebSocketConfigurer {
 
-    private final static String CHAT_ENDPOINT = "/websocket";
+    private final static String CHAT_ENDPOINT = "/croswebsocket";
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
@@ -22,6 +22,6 @@ public class WebSocketConfiguration implements WebSocketConfigurer {
 
     @Bean
     public org.springframework.web.socket.WebSocketHandler getChatWebSocketHandler(){
-        return new WebSocketHandler();
+        return new CrosWebSocketHandler();
     }
 }

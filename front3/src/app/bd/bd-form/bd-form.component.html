@@ -1,100 +1,294 @@
 
-<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+<!--<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">-->
+<!--  <div class="modal-content">-->
+
+<!--    &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--    <div class="modal-header ">-->
+<!--      <h4 class="modal-title">Formulaire nouvelle BD</h4>-->
+<!--      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Modal body &ndash;&gt;-->
+<!--    <div class="modal-body">-->
+
+
+
+<!--      <div class="form-floating my-3">-->
+<!--        <input type="text" class="form-control" id="title" placeholder="Titre" name="title">-->
+<!--        <label for="title">Titre</label>-->
+<!--      </div>-->
+
+
+<!--      <div class="form-floating my-3">-->
+<!--        <input type="text" class="form-control" id="tome" placeholder="Tome" name="tome">-->
+<!--        <label for="tome">Tome</label>-->
+<!--      </div>-->
+
+
+
+
+<!--      <div class="input-group form-floating my-3">-->
+<!--        <select class="form-select" id="saga" name="saga">-->
+<!--          <option  *ngFor="let saga of listSaga">{{saga.name}}</option>-->
+<!--        </select>-->
+<!--        <label for="saga" class="form-label">Saga:</label>-->
+<!--        <button class="btn btn-outline-primary w-25" data-bs-target="#newSagaModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvelle saga</button>-->
+<!--      </div>-->
+
+
+
+
+<!--      <div class="input-group form-floating my-3">-->
+<!--        <select class="form-select" id="edition" name="edition">-->
+<!--          <option>1</option>-->
+<!--          <option>2</option>-->
+<!--          <option>3</option>-->
+<!--          <option>4</option>-->
+<!--        </select>-->
+<!--        <label for="edition" class="form-label">Edition:</label>-->
+<!--        <button class="btn btn-outline-primary w-25" data-bs-target="#newEditionModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvelle édition</button>-->
+<!--      </div>-->
+
+
+
+
+<!--&lt;!&ndash;      <div class="form-floating my-3">&ndash;&gt;-->
+<!--&lt;!&ndash;        <select class="form-select" id="edition" name="edition">&ndash;&gt;-->
+<!--&lt;!&ndash;          <option>1</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option>2</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option>3</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option>4</option>&ndash;&gt;-->
+<!--&lt;!&ndash;        </select>&ndash;&gt;-->
+<!--&lt;!&ndash;        <label for="edition" class="form-label">Selectionnez une édition:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button class="btn btn-outline-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      &ndash;&gt;-->
+<!--&lt;!&ndash;      &ndash;&gt;-->
+<!--&lt;!&ndash;      &ndash;&gt;-->
+<!--&lt;!&ndash;      &ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="form-floating my-3">&ndash;&gt;-->
+<!--&lt;!&ndash;        <select class="form-select" id="edition" name="edition">&ndash;&gt;-->
+<!--&lt;!&ndash;          <option>1</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option>2</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option>3</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option>4</option>&ndash;&gt;-->
+<!--&lt;!&ndash;        </select>&ndash;&gt;-->
+<!--&lt;!&ndash;        <label for="edition" class="form-label">Selectionnez une édition:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button class="btn btn-outline-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+
+
+
+
+
+<!--&lt;!&ndash;      <div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button class="btn btn-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Modal footer &ndash;&gt;-->
+<!--    <div class="modal-footer ">-->
+<!--      <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Valider</button>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal-dialog modal-lg modal-dialog-centered ">
   <div class="modal-content">
 
-    <!-- Modal Header -->
-    <div class="modal-header ">
-      <h4 class="modal-title">Formulaire nouvelle BD</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+
+<!--  <div class="container">-->
+
+<!--    <div class="card m-2">-->
+
+      <div class="modal-header text-white bg-info">
+        <h5 class="modal-title">Nouvelle BD</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="card-body">
+        <form [formGroup]="bdForm" >
+
+          <div class="form-row ">
+
+
+            <div class="input-group mb-3 mt-3">
+              <label for="titre" class="input-group-text col-2">Titre</label>
+              <input type="text" class="form-control" id="titre" name="titre" formControlName="title" >
+            </div>
+
+
+            <div class="input-group mb-3 mt-3">
+              <label for="tome" class="input-group-text col-2">Tome</label>
+              <input type="text" class="form-control" id="tome" name="tome" formControlName="tome">
+            </div>
+
+
+            <div class="input-group mb-3 mt-3">
+              <label for="saga" class="input-group-text col-2">Saga</label>
+              <select class="form-select" name="saga" id="saga" formControlName="saga">
+                <option *ngFor="let saga of listSaga" [ngValue]="saga">{{ saga.name }}</option>
+              </select>
+              <button type="button" class="btn btn-outline-info col-3" data-bs-toggle="modal" data-bs-target="#newSagaModal">Créer une saga</button>
+            </div>
+
+
+            <!--          <p>saga Value: {{ testBdForm.saga.value|json }}</p>-->
+
+            <div class="input-group mb-3 mt-3">
+              <label for="edition" class="input-group-text col-2">Edition</label>
+              <select class="form-select" name="edition" id="edition" formControlName="edition">
+                <option *ngFor="let edition of listEdition" [ngValue]="edition">{{ edition.name }}</option>
+              </select>
+              <button type="button" class="btn btn-outline-info col-3" data-bs-toggle="modal" data-bs-target="#newEditionModal">Créer une édition</button>
+            </div>
+
+<!--            <p>edition Value: {{ scenaristes.value|json }}</p>-->
+
+            <div formArrayName="scenaristes" class="card p-2 my-3">
+              <h6>Scénaristes</h6>
+              <div class="input-group mb-3 mt-3 " *ngFor="let scenariste of scenaristes.controls; let i=index" [formControlName]="i">
+                <label for="scenariste-{{i}}" class="input-group-text col-2">Scénariste</label>
+                <select class="form-select" name="scenariste" id="scenariste-{{i}}" [formControlName]="i">
+                  <option disabled selected value> -- choisissez un artiste -- </option>
+                  <option *ngFor="let artiste of listArtist" [ngValue]="artiste">{{artiste.lastname}}</option>
+                </select>
+                <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#newArtisteModal">Créer un artiste</button>
+                <button (click)="removeScenariste(i)" class="btn btn-outline-danger" type="button" >Supprimer</button>
+              </div>
+
+              <div class="d-flex justify-content-around">
+                <button (click)="addScenariste()" type="button" class="btn btn-outline-info">Ajouter un scénariste</button>
+              </div>
+
+            </div>
+
+            <!--          <p>Scenaristes Value: {{ scenaristes.value|json }}</p>-->
+            <!--          <p>scenariste raw Value: {{ scenaristes.getRawValue()|json }}</p>-->
+
+
+            <div formArrayName="illustrateurs" class="card p-2 my-3">
+              <h6>Illustrateurs</h6>
+              <div class="input-group mb-3 mt-3 " *ngFor="let illustrateur of illustrateurs.controls; let i=index" [formControlName]="i">
+                <label for="illustrateur-{{i}}" class="input-group-text col-2">Illustrateur</label>
+                <select class="form-select" name="illustrateur" id="illustrateur-{{i}}" [formControlName]="i">
+                  <option disabled selected value> -- choisissez un artiste -- </option>
+                  <option *ngFor="let artiste of listArtist" [ngValue]="artiste">{{artiste.lastname}}</option>
+                </select>
+                <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#newArtisteModal">Créer un artiste</button>
+                <button (click)="removeIllustrateur(i)" class="btn btn-outline-danger" type="button" >Supprimer</button>
+              </div>
+
+              <div class="d-flex justify-content-around">
+                <button (click)="addIllustrateur()" type="button" class="btn btn-outline-info">Ajouter un illustrateur</button>
+              </div>
+
+            </div>
+
+            <!--          <div formArrayName="illustrateurs" class="card p-2 my-3">-->
+            <!--            <h6>Illustrateurs</h6>-->
+            <!--            <div class="input-group mb-3 mt-3" *ngFor="let illustrateur of illustrateurs.controls; let i=index" [formControlName]="i">-->
+            <!--              <label for="illustrateur-{{i}}" class="input-group-text col-2">Illustrateur</label>-->
+            <!--              <select class="form-select" name="illustrateur" id="illustrateur-{{i}}" >-->
+            <!--                <option disabled selected value> &#45;&#45; choisissez un artiste &#45;&#45; </option>-->
+            <!--                <option *ngFor="let artiste of bdService.getListeArtiste()" [ngValue]="artiste">{{artiste.lastname}}</option>-->
+            <!--              </select>-->
+            <!--              <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalCreerArtiste">Créer un artiste</button>-->
+            <!--              <button (click)="removeIllustrateur(i)" class="btn btn-outline-danger" type="button">Supprimer</button>-->
+            <!--            </div>-->
+
+            <!--            <div class="d-flex justify-content-around">-->
+            <!--              <button (click)="addIllustrateur()" type="button" class="btn btn-outline-info ">Ajouter un illustrateur</button>-->
+            <!--            </div>-->
+
+            <!--          </div>-->
+
+
+
+            <div class="input-group mb-5 mt-3" >
+              <label class="input-group-text col-2" for="file">Couverture</label>
+              <input type="file" id="file" #file class="form-control"  accept="image/png, image/jpeg" requiredFileType="image"  (change)="onFileChanged($event)">
+              <button (click)="supprimerFichier()" class="btn btn-outline-danger" type="button" >Supprimer</button>
+            </div>
+            <div class="row">
+              <div class="col-4 mx-auto">
+                <img *ngIf="selectedFile" [src]="url" class="w-100">
+              </div>
+            </div>
+
+
+          </div>
+
+<!--          <div class="position-relative mt-5">-->
+<!--            <button (click)="validForm()"-->
+<!--                    [disabled]="!bdForm.valid"-->
+<!--                    [ngClass]="bdForm.valid ? 'btn btn-outline-success': 'btn btn-outline-danger'"-->
+<!--                    data-bs-dismiss="modal">-->
+<!--              Valider saga-->
+<!--            </button>-->
+
+<!--&lt;!&ndash;            <button (click)="saveForm()" class="btn btn-vert position-absolute bottom-0 end-0" type="submit" [disabled]="!testBdForm.valid">valider</button>&ndash;&gt;-->
+<!--          </div>-->
+        </form>
+
+      </div>
+
+      <div>
+<!--        <img *ngIf="selectedFile" src="../../../assets/images/HFTheme2.jpg">-->
+
+
+<!--        <div *ngIf="selectedFile !== undefined && selectedFile !== null">-->
+<!--          <p>le fichier n'est pas null</p>-->
+<!--        </div>-->
+<!--        <div  *ngIf="selectedFile === undefined || selectedFile === null">-->
+<!--          <p>le fichier est null</p>-->
+<!--        </div>-->
+
+<!--        <div *ngIf="test==='test'">-->
+<!--          <p>le fichier n'est pas null</p>-->
+<!--        </div>-->
+<!--        <div  *ngIf="test!=='test'">-->
+<!--          <p>le fichier est null</p>-->
+<!--        </div>-->
+
+        <p>Form Status: {{ bdForm.status }}</p>
+        <p>Form Value: {{ bdForm.value|json }}</p>
+
+      </div>
+
+      <div class="modal-footer">
+        <button (click)="validForm()"
+                [disabled]="!bdForm.valid"
+                [ngClass]="bdForm.valid ? 'btn btn-outline-success': 'btn btn-outline-danger'"
+                data-bs-dismiss="modal">
+          Valider bd
+        </button>
+      </div>
+
     </div>
 
-    <!-- Modal body -->
-    <div class="modal-body">
-
-
-
-      <div class="form-floating my-3">
-        <input type="text" class="form-control" id="title" placeholder="Titre" name="title">
-        <label for="title">Titre</label>
-      </div>
-
-
-      <div class="form-floating my-3">
-        <input type="text" class="form-control" id="tome" placeholder="Tome" name="tome">
-        <label for="tome">Tome</label>
-      </div>
 
 
 
 
-      <div class="input-group form-floating my-3">
-        <select class="form-select" id="saga" name="saga">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
-        <label for="saga" class="form-label">Saga:</label>
-        <button class="btn btn-outline-primary w-25" data-bs-target="#newSagaModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvelle saga</button>
-      </div>
-
-
-
-
-      <div class="input-group form-floating my-3">
-        <select class="form-select" id="edition" name="edition">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
-        <label for="edition" class="form-label">Edition:</label>
-        <button class="btn btn-outline-primary w-25" data-bs-target="#newEditionModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvelle édition</button>
-      </div>
-
-
-
-
-<!--      <div class="form-floating my-3">-->
-<!--        <select class="form-select" id="edition" name="edition">-->
-<!--          <option>1</option>-->
-<!--          <option>2</option>-->
-<!--          <option>3</option>-->
-<!--          <option>4</option>-->
-<!--        </select>-->
-<!--        <label for="edition" class="form-label">Selectionnez une édition:</label>-->
-<!--        <button class="btn btn-outline-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>-->
-<!--      </div>-->
-<!--      -->
-<!--      -->
-<!--      -->
-<!--      -->
-<!--      <div class="form-floating my-3">-->
-<!--        <select class="form-select" id="edition" name="edition">-->
-<!--          <option>1</option>-->
-<!--          <option>2</option>-->
-<!--          <option>3</option>-->
-<!--          <option>4</option>-->
-<!--        </select>-->
-<!--        <label for="edition" class="form-label">Selectionnez une édition:</label>-->
-<!--        <button class="btn btn-outline-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>-->
-<!--      </div>-->
-
-
-
-
-
-
-<!--      <div>-->
-<!--        <button class="btn btn-primary" data-bs-target="#newArtisteModal" data-bs-toggle="modal" data-bs-dismiss="modal">Nouvel artiste</button>-->
-<!--      </div>-->
-
-    </div>
-
-    <!-- Modal footer -->
-    <div class="modal-footer ">
-      <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Valider</button>
-    </div>
-
-  </div>
 </div>
+
+
+
+
+
+

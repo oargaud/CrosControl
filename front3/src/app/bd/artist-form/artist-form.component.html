@@ -3,7 +3,7 @@
   <div class="modal-content">
 
     <!-- Modal Header -->
-    <div class="modal-header">
+    <div class="modal-header text-white bg-info">
       <h4 class="modal-title">Formulaire nouvel artiste</h4>
 <!--      <button class="btn btn-primary" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Retour BD</button>-->
       <button type="button" class="btn-close" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal"></button>
@@ -11,25 +11,33 @@
 
     <!-- Modal body -->
     <div class="modal-body">
+      <form [formGroup]="artistForm">
+
+        <div class="form-floating mt-3 mb-3">
+          <input type="text" class="form-control" id="lastname" placeholder="Nom" formControlName="lastname">
+          <label for="lastname">Nom</label>
+        </div>
 
 
-      <div class="form-floating mt-3 mb-3">
-        <input type="text" class="form-control" id="lastname" placeholder="Nom" name="lastname">
-        <label for="lastname">Nom</label>
-      </div>
+        <div class="form-floating mt-3 mb-3">
+          <input type="text" class="form-control" id="firstname" placeholder="Prénom" formControlName="firstname">
+          <label for="firstname">Prénom</label>
+        </div>
 
-
-      <div class="form-floating mt-3 mb-3">
-        <input type="text" class="form-control" id="firstname" placeholder="Prénom" name="firstname">
-        <label for="firstname">Prénom</label>
-      </div>
-
-
+      </form>
     </div>
 
     <!-- Modal footer -->
     <div class="modal-footer">
-      <button class="btn btn-outline-success" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Valider artiste</button>
+      <button (click)="validForm()"
+              [disabled]="!artistForm.valid"
+              [ngClass]="artistForm.valid ? 'btn btn-outline-success': 'btn btn-outline-danger'"
+              data-bs-target="#newBdModal"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal">
+        Valider artiste
+      </button>
+<!--      <button class="btn btn-outline-success" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Valider artiste</button>-->
     </div>
 
   </div>

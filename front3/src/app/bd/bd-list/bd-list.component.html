@@ -1,0 +1,44 @@
+<div class="bd-list ">
+  <div >
+    <div class="heading">
+      <!--      <h1>Css Responsive Flexbox Cards</h1>-->
+    </div>
+    <div class="row ">
+
+      <div class="card " *ngFor="let bd of listBd" >
+<!--      <div class="card " *ngFor="let bd of listBd"  routerLink="/detail/{{bd.id}}">-->
+        <div class="card-header">
+          <h4>{{bd.title}}</h4>
+        </div>
+        <div class="card-body">
+          <!--          <p>-->
+          <!--            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.-->
+          <!--          </p>-->
+
+
+          <div class="row mb-2">
+            <div class="col-8 mx-auto">
+              <!--    <img *ngIf="bd.photo" [src]="retrievedImage" class="w-100">-->
+              <img *ngIf="bd.photo" [src]="'data:image/jpeg;base64,' + bd.photo" class="w-100">
+
+            </div>
+          </div>
+
+
+
+<!--          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#confirmModal">-->
+<!--            Supprimer-->
+<!--          </button>-->
+
+                    <a (click)="supprimer(bd.id)" class="btn">Supprimer</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+</div>
+

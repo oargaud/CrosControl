@@ -33,32 +33,7 @@
 </nav>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<app-bd-list></app-bd-list>
 
 
 
@@ -92,6 +67,39 @@
 
 
 
+<!-- The Modal confirmation-->
+<div class="modal fade" id="confirmModal" data-bs-backdrop="static" data-bs-keyboard="false">
+
+
+
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header text-white bg-info">
+        <h4 class="modal-title">Confirmation suppression</h4>
+        <button type="button" class="btn-close"  data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <button
+
+                class="btn btn-outline-danger"
+                data-bs-dismiss="modal">
+          Supprimer
+        </button>
+        <button class="btn btn-outline-success"
+                data-bs-dismiss="modal">
+          Annuler
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
 
 
 

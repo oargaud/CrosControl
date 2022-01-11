@@ -28,9 +28,9 @@ public class EditionControler {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Edition createEdition(@RequestBody Edition edition){
+    public ResponseEntity<Edition> createEdition(@RequestBody Edition edition){
 
-        return editionRepository.save(edition);
+        return new ResponseEntity<>(editionRepository.save(edition), HttpStatus.OK);
     }
 
 
