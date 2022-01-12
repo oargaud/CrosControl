@@ -64,7 +64,8 @@ export class BdFormComponent implements OnInit {
     ]),
     illustrateurs:this.fb.array([
         this.fb.control('')
-      ])
+      ]),
+    statutPossession:['']
 //       ,
 //     photo: new FormControl(null)
   });

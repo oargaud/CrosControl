@@ -1,6 +1,6 @@
 
 
-<div class="card p-0 m-5"  routerLink="/detail/{{bd.id}}">
+<div class="card p-0 m-2"  routerLink="/detail/{{bd.id}}">
 
   <div class="card-header">
     <h4>{{bd.title}}</h4>
@@ -14,9 +14,40 @@
 <!--    </div>-->
   </div>
 
-  <div class="card-footer">
-<!--    <h4>{{bd.statutpossession.statut}}</h4>-->
-    TEST
+<!--  <div [ngSwitch]="bd.statutPossession.statut" >-->
+
+<!--    <div  *ngSwitchCase="ACQUIS" class="card-footer" style="background:green" id={{bd.title}}>-->
+<!--      <h4  >YES</h4>-->
+<!--    </div>-->
+<!--    <div  *ngSwitchCase="NON ACQUIS" class="card-footer" style="background:red" id={{bd.title}}>-->
+<!--      <h4  >NO</h4>-->
+<!--    </div>-->
+<!--    <div  *ngSwitchDefault class="card-footer" style="background:yellow" id={{bd.title}}>-->
+<!--      <h4  >Vas comprendre charles</h4>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--  <div [ngSwitch]="true" >-->
+
+<!--    <div  *ngSwitchCase="bd.statutPossession.statut === 'ACQUIS'" class="card-footer" style="background:green" id={{bd.title}}>-->
+<!--      <h4  >YES</h4>-->
+<!--    </div>-->
+<!--    <div  *ngSwitchCase="bd.statutPossession.statut === 'NON ACQUIS'" class="card-footer" style="background:red" id={{bd.title}}>-->
+<!--      <h4  >NO</h4>-->
+<!--    </div>-->
+<!--    <div  *ngSwitchDefault class="card-footer" style="background:yellow" id={{bd.title}}>-->
+<!--      <h4  >Vas comprendre charles</h4>-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+
+  <div class="card-footer" style="background:{{couleur}}">
+    <h4 > {{statut}} </h4>
   </div>
+<!--  <div *ngIf="bd.statutPossession" class="card-footer" style="background:red" id={{bd.title}}>-->
+<!--    <h4 *ngIf="bd.statutPossession" >{{bd.statutPossession.statut}}</h4>-->
+<!--  </div>-->
 
 </div>
