@@ -27,7 +27,8 @@ public class BD {
 
     private String tome;
 
-    private String appartenance = "PAS_ENCORE";
+    @ManyToOne
+    private StatutPossession statutPossession ;
 
     @ManyToMany
     private List<Photo> photos = new ArrayList<>();
@@ -92,12 +93,12 @@ public class BD {
         this.tome = tome;
     }
 
-    public String getAppartenance() {
-        return appartenance;
+    public StatutPossession getStatutPossession() {
+        return statutPossession;
     }
 
-    public void setAppartenance(String appartenance) {
-        this.appartenance = appartenance;
+    public void setStatutPossession(StatutPossession statutPossession) {
+        this.statutPossession = statutPossession;
     }
 
     public List<Photo> getPhotos() {

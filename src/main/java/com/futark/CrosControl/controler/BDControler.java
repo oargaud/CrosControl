@@ -4,8 +4,10 @@ package com.futark.CrosControl.controler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.futark.CrosControl.model.BD;
 import com.futark.CrosControl.model.Photo;
+import com.futark.CrosControl.model.StatutPossession;
 import com.futark.CrosControl.repository.BDRepository;
 import com.futark.CrosControl.repository.PhotoRepository;
+import com.futark.CrosControl.repository.StatutPossessionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -30,6 +32,9 @@ public class BDControler {
 
     @Autowired
     public PhotoRepository photoRepository;
+
+    @Autowired
+    public StatutPossessionRepository statutPossessionRepository;
 
 
 //    @PostMapping("/create")
@@ -85,5 +90,17 @@ public class BDControler {
     public ResponseEntity<List<BD>> getALL(){
         return new ResponseEntity<>(bdRepository.findAll(), HttpStatus.OK);
     }
+
+
+    @RequestMapping(
+            value = "/statutpossession/all",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public ResponseEntity<List<StatutPossession>> getStatutALL(){
+        return new ResponseEntity<>(statutPossessionRepository.findAll(), HttpStatus.OK);
+    }
+
+
 
 }
