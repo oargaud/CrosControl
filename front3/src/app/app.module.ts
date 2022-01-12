@@ -19,6 +19,7 @@ import { PhotoComponent } from './photo/photo.component';
 import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
 import { GestionArtistesComponent } from './bd/gestion-artistes/gestion-artistes.component';
 import { BdHeaderComponent } from './bd/bd-header/bd-header.component';
+import { BdCardComponent } from './bd/bd-card/bd-card.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BdHeaderComponent } from './bd/bd-header/bd-header.component';
     PhotoComponent,
     BdDetailComponent,
     GestionArtistesComponent,
-    BdHeaderComponent
+    BdHeaderComponent,
+    BdCardComponent
   ],
   imports: [
     BrowserModule,

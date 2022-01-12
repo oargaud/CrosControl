@@ -1,4 +1,10 @@
 
+.row {
+  display: flex;
+  flex-direction: row;
+//   justify-content: space-around;
+  flex-flow: wrap;
+}
 
 
 // * {
@@ -9,37 +15,30 @@
 
 
 
-.row {
-  display: flex;
-  flex-direction: row;
-//   justify-content: space-around;
-  flex-flow: wrap;
-}
-
-.card {
-  width: 15%;
-  background: #fff;
-  border: 1px solid #ccc;
-  margin-bottom: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  transition: 0.3s;
-}
-
-.card-header {
-  text-align: center;
-  padding: 20px 10px;
-  background: linear-gradient(to right, #9900ff, #ff4b2b);
-  color: #fff;
-}
-
-.card-body {
-//   background-image: url('../../../assets/images/IMG_20211120_160512.jpg');
-  padding: 30px 20px;
-  height: 300px;
-  text-align: center;
-  font-size: 18px;
-}
+// .card {
+//   width: 15%;
+//   background: #fff;
+//   border: 1px solid #ccc;
+//   margin-bottom: 50px;
+//   margin-left: 10px;
+//   margin-right: 10px;
+//   transition: 0.3s;
+// }
+//
+// .card-header {
+//   text-align: center;
+//   padding: 20px 10px;
+//   background: linear-gradient(to right, #9900ff, #ff4b2b);
+//   color: #fff;
+// }
+//
+// .card-body {
+// //   background-image: url('../../../assets/images/IMG_20211120_160512.jpg');
+//   padding: 30px 20px;
+//   height: 300px;
+//   text-align: center;
+//   font-size: 18px;
+// }
 
 // .card-body .btn {
 //   display: block;
@@ -57,41 +56,75 @@
 //   box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
 // }
 
-.card:hover {
+app-bd-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+//   box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
 }
 
+
+app-bd-card{
+  width: 15%;
+  height: 50%
+}
+
+.bd-list{
+  background:#ff0000 // rouge
+}
+
+h4{
+  font-size: 16px;
+}
+
+
 @media screen and (max-width: 1400px) {
-  .card {
+  app-bd-card{
     width: 20%;
+    font-size: 16px;
+  }
+  app-bd-card h4{
+    font-size: 16px;
+  }
+  .bd-list{
+    background:#ffff00 // jaune
   }
 }
 
 
 @media screen and (max-width: 1000px) {
-  .card {
-    width: 40%;
-  }
+   app-bd-card{
+      width: 33%;
+   }
+   .bd-list{
+     background:#00ff00 // vert
+   }
+   app-bd-card:hover {
+       transform: none;
+       box-shadow: none;
+   }
 }
 
 @media screen and (max-width: 800px) {
-  .card {
-    width: 60%;
-  }
+   app-bd-card{
+        width: 50%;
+   }
+   .bd-list{
+     background:#00ffff // cyan
+   }
+   app-bd-card:hover {
+       transform: none;
+       box-shadow: none;
+   }
 }
 
 @media screen and (max-width: 620px) {
-  .container {
-    width: 100%;
+  app-bd-card{
+      width: 100%;
   }
-
-  .heading {
-    padding: 20px;
-    font-size: 20px;
+  .bd-list{
+    background:#0000ff // bleu
   }
-
-  .card {
-    width: 80%;
+  app-bd-card:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
