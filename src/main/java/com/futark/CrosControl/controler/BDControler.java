@@ -3,7 +3,9 @@ package com.futark.CrosControl.controler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.futark.CrosControl.model.BD;
+import com.futark.CrosControl.model.Photo;
 import com.futark.CrosControl.repository.BDRepository;
+import com.futark.CrosControl.repository.PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +28,8 @@ public class BDControler {
     @Autowired
     public BDRepository bdRepository;
 
+    @Autowired
+    public PhotoRepository photoRepository;
 
 
 //    @PostMapping("/create")
@@ -37,10 +42,16 @@ public class BDControler {
     @PostMapping("/create")
     public ResponseEntity<BD> createBd(@RequestParam("photo") Optional<MultipartFile> photo, @RequestParam String bd) throws IOException {
 
-
         BD newbd = new ObjectMapper().readValue(bd, BD.class);
 
-        newbd.setPhoto(photo.get().getBytes());
+
+
+        if(photo.isPresent()){
+            ArrayList<String>tags = new ArrayList<>();
+            tags.add("couv");
+            newbd.getPhotos().add(photoRepository.save(new Photo(photo.get().getBytes(),tags)));
+        }
+
 
         return new ResponseEntity(bdRepository.save(newbd), HttpStatus.OK);
     }

@@ -1,6 +1,7 @@
 package com.futark.CrosControl.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,22 +27,13 @@ public class BD {
 
     private String tome;
 
-    @Lob
-    @Column(length=100000)
-    private byte[] photo;
+    private String appartenance = "PAS_ENCORE";
+
+    @ManyToMany
+    private List<Photo> photos = new ArrayList<>();
 
 
     public BD() {
-    }
-
-    public BD(String title, List<Artiste> scenaristes, List<Artiste> illustrateurs, Edition edition, Saga saga, String tome, byte[] photo) {
-        this.title = title;
-        this.scenaristes = scenaristes;
-        this.illustrateurs = illustrateurs;
-        this.edition = edition;
-        this.saga = saga;
-        this.tome = tome;
-        this.photo = photo;
     }
 
     public Long getId() {
@@ -100,11 +92,19 @@ public class BD {
         this.tome = tome;
     }
 
-    public byte[] getPhoto() {
-        return photo;
+    public String getAppartenance() {
+        return appartenance;
     }
 
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
+    public void setAppartenance(String appartenance) {
+        this.appartenance = appartenance;
+    }
+
+    public List<Photo> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(List<Photo> photos) {
+        this.photos = photos;
     }
 }

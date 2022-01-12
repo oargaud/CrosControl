@@ -1,12 +1,18 @@
-<div class="bd-list ">
+<div class="bd-list mx-5 ">
+
+  <div class="text-center my-5">
+    <button class="btn btn-outline-info " data-bs-toggle="modal" data-bs-target="#newBdModal" >Ajout Bd</button>
+  </div>
+
+
   <div >
     <div class="heading">
       <!--      <h1>Css Responsive Flexbox Cards</h1>-->
     </div>
     <div class="row ">
 
-      <div class="card " *ngFor="let bd of listBd" >
-<!--      <div class="card " *ngFor="let bd of listBd"  routerLink="/detail/{{bd.id}}">-->
+<!--      <div class="card " *ngFor="let bd of listBd" >-->
+      <div class="card p-0" *ngFor="let bd of listBd"  routerLink="/detail/{{bd.id}}">
         <div class="card-header">
           <h4>{{bd.title}}</h4>
         </div>
@@ -16,10 +22,10 @@
           <!--          </p>-->
 
 
-          <div class="row mb-2">
-            <div class="col-8 mx-auto">
+          <div class="row mb-2 align-bottom">
+            <div class="col-12 mx-auto align-bottom">
               <!--    <img *ngIf="bd.photo" [src]="retrievedImage" class="w-100">-->
-              <img *ngIf="bd.photo" [src]="'data:image/jpeg;base64,' + bd.photo" class="w-100">
+              <img *ngIf="bd.photos[0].photo" [src]="'data:image/jpeg;base64,' + bd.photos[0].photo" class="w-100">
 
             </div>
           </div>
@@ -30,7 +36,7 @@
 <!--            Supprimer-->
 <!--          </button>-->
 
-                    <a (click)="supprimer(bd.id)" class="btn">Supprimer</a>
+<!--                    <a (click)="supprimer(bd.id)" class="btn">Supprimer</a>-->
         </div>
       </div>
 

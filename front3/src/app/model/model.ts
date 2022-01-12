@@ -51,7 +51,7 @@ export class BdDto{
   edition: EditionDto;
   saga: SagaDto;
   tome: string;
-  photo: File;
+  photos: PhotoDto[];
 
 //   constructor(id: number,
 //               title: string,
@@ -72,6 +72,20 @@ export class BdDto{
 //     this.photo = photo;
 //   }
    public constructor(init?: Partial<BdDto>) {
+          Object.assign(this, init);
+      }
+}
+
+
+
+
+export class PhotoDto{
+
+  id: number;
+  tags: string[];
+  photo: File;
+
+   public constructor(init?: Partial<PhotoDto>) {
           Object.assign(this, init);
       }
 }

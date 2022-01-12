@@ -35,7 +35,9 @@ export class BdDetailComponent implements OnInit {
     this.bdService.getBd(id).subscribe(
       bd => {
         this.bd = bd;
-        this.retrievedImage = 'data:image/jpeg;base64,' + bd.photo;
+        console.log(bd.photos);
+
+        this.retrievedImage = 'data:image/jpeg;base64,' + bd.photos;
       }
     );
   }

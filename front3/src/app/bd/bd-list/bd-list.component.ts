@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BdDto, ArtistDto , EditionDto , SagaDto } from '../../model/model'
+import { BdDto, ArtistDto , EditionDto , SagaDto ,PhotoDto  } from '../../model/model'
 
 import { BdService } from '../../service/bd.service'
 
