@@ -17,6 +17,8 @@ import { BdListComponent } from './bd/bd-list/bd-list.component';
 import { ChatComponent } from './chat/chat.component';
 import { PhotoComponent } from './photo/photo.component';
 import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
+import { GestionArtistesComponent } from './bd/gestion-artistes/gestion-artistes.component';
+import { BdHeaderComponent } from './bd/bd-header/bd-header.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
     BdListComponent,
     ChatComponent,
     PhotoComponent,
-    BdDetailComponent
+    BdDetailComponent,
+    GestionArtistesComponent,
+    BdHeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -24,3 +24,86 @@
 
 
 <router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- The Modal nouvelle BD-->
+<div class="modal fade" id="newBdModal" data-bs-backdrop="static" data-bs-keyboard="false">
+  <app-bd-form></app-bd-form>
+</div>
+
+
+<!-- The Modal nouvel artiste-->
+<div class="modal fade" id="newArtisteModal" data-bs-backdrop="static" data-bs-keyboard="false">
+  <app-artist-form></app-artist-form>
+</div>
+
+<!-- The Modal nouvelle edition-->
+<div class="modal fade" id="newEditionModal" data-bs-backdrop="static" data-bs-keyboard="false">
+  <app-edition-form></app-edition-form>
+</div>
+<!-- The Modal nouvelle saga-->
+<div class="modal fade" id="newSagaModal" data-bs-backdrop="static" data-bs-keyboard="false">
+  <app-saga-form></app-saga-form>
+</div>
+
+
+
+
+
+<!-- The Modal confirmation-->
+<div class="modal fade" id="confirmModal" data-bs-backdrop="static" data-bs-keyboard="false">
+
+
+
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header text-white bg-info">
+        <h4 class="modal-title">Confirmation suppression</h4>
+        <button type="button" class="btn-close"  data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <button
+
+          class="btn btn-outline-danger"
+          data-bs-dismiss="modal">
+          Supprimer
+        </button>
+        <button class="btn btn-outline-success"
+                data-bs-dismiss="modal">
+          Annuler
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+

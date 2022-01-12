@@ -1,105 +1,10 @@
-
-
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newBdModal">
-          Nouvelle BD
-        </button>
-
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
-        </li>
-
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+<app-bd-header></app-bd-header>
 
 
 <app-bd-list></app-bd-list>
 
 
 
-
-
-
-
-
-
-<!-- The Modal nouvelle BD-->
-<div class="modal fade" id="newBdModal" data-bs-backdrop="static" data-bs-keyboard="false">
-  <app-bd-form></app-bd-form>
-</div>
-
-
-<!-- The Modal nouvel artiste-->
-<div class="modal fade" id="newArtisteModal" data-bs-backdrop="static" data-bs-keyboard="false">
-  <app-artist-form></app-artist-form>
-</div>
-
-<!-- The Modal nouvelle edition-->
-<div class="modal fade" id="newEditionModal" data-bs-backdrop="static" data-bs-keyboard="false">
-  <app-edition-form></app-edition-form>
-</div>
-<!-- The Modal nouvelle saga-->
-<div class="modal fade" id="newSagaModal" data-bs-backdrop="static" data-bs-keyboard="false">
-  <app-saga-form></app-saga-form>
-</div>
-
-
-
-
-
-<!-- The Modal confirmation-->
-<div class="modal fade" id="confirmModal" data-bs-backdrop="static" data-bs-keyboard="false">
-
-
-
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header text-white bg-info">
-        <h4 class="modal-title">Confirmation suppression</h4>
-        <button type="button" class="btn-close"  data-bs-dismiss="modal"></button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <button
-
-                class="btn btn-outline-danger"
-                data-bs-dismiss="modal">
-          Supprimer
-        </button>
-        <button class="btn btn-outline-success"
-                data-bs-dismiss="modal">
-          Annuler
-        </button>
-
-      </div>
-
-    </div>
-  </div>
-
-</div>
 
 
 

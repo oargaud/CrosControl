@@ -8,6 +8,7 @@ import { BdComponent } from './bd/bd.component';
 import { ChatComponent } from './chat/chat.component';
 import { PhotoComponent } from './photo/photo.component';
 import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
+import { GestionArtistesComponent } from './bd/gestion-artistes/gestion-artistes.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
 { path: 'bd', component: BdComponent},
 { path: 'chat', component: ChatComponent},
 { path: 'photo', component: PhotoComponent},
+{ path: 'gestion_artistes', component: GestionArtistesComponent},
 { path: 'detail/:id', component: BdDetailComponent }
 ];
 

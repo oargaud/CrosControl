@@ -38,7 +38,7 @@ public class Artiste {
     }
 
     public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastname = lastname.toUpperCase();
     }
 
     public String getFirstname() {
@@ -46,7 +46,7 @@ public class Artiste {
     }
 
     public void setFirstname(String firstname) {
-        this.firstname = firstname;
+        this.firstname = firstname.toUpperCase();
     }
 
 
