@@ -231,6 +231,17 @@
             </div>
 
 
+            <div class="input-group mb-3 mt-3">
+              <label for="statutPossession" class="input-group-text col-2">Statut</label>
+              <select class="form-select" name="statutPossession" id="statutPossession" formControlName="statutPossession">
+                <option *ngFor="let statut of listStatutPossession" [ngValue]="statut">{{ statut.statut }}</option>
+              </select>
+              <button type="button" class="btn btn-outline-info col-3" data-bs-toggle="modal" data-bs-target="#newStatutPossessionModal">Créer un statut</button>
+            </div>
+
+
+
+
           </div>
 
 <!--          <div class="position-relative mt-5">-->

@@ -92,15 +92,5 @@ public class BDControler {
     }
 
 
-    @RequestMapping(
-            value = "/statutpossession/all",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public ResponseEntity<List<StatutPossession>> getStatutALL(){
-        return new ResponseEntity<>(statutPossessionRepository.findAll(), HttpStatus.OK);
-    }
-
-
 
 }

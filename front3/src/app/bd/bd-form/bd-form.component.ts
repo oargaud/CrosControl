@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { HttpParams, HttpClient } from '@angular/common/http';
 
-import { BdDto, ArtistDto, EditionDto, SagaDto } from '../../model/model'
+import { BdDto, ArtistDto, EditionDto, SagaDto, StatutPossessionDto } from '../../model/model'
 
 import { BdService } from '../../service/bd.service';
 
@@ -48,6 +48,11 @@ export class BdFormComponent implements OnInit {
 //     { "lastname": "TARQUIN", "firstname":"titi"}
   ];
 
+  listStatutPossession: StatutPossessionDto[] = [
+//     { "lastname": "ARLESTON", "firstname":"toto" },
+//     { "lastname": "TARQUIN", "firstname":"titi"}
+  ];
+
 
   bdForm = this.fb.group({
     title: ['', Validators.required],
@@ -81,6 +86,10 @@ export class BdFormComponent implements OnInit {
 
     this.bdService.getArtistes().subscribe(
       (reponse) => this.listArtist = reponse
+    );
+
+    this.bdService.getStatutPossession().subscribe(
+      (reponse) => this.listStatutPossession = reponse
     );
 
   }

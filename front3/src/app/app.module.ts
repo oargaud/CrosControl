@@ -20,6 +20,7 @@ import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
 import { GestionArtistesComponent } from './bd/gestion-artistes/gestion-artistes.component';
 import { BdHeaderComponent } from './bd/bd-header/bd-header.component';
 import { BdCardComponent } from './bd/bd-card/bd-card.component';
+import { StatutFormComponent } from './bd/statut-form/statut-form.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BdCardComponent } from './bd/bd-card/bd-card.component';
     BdDetailComponent,
     GestionArtistesComponent,
     BdHeaderComponent,
-    BdCardComponent
+    BdCardComponent,
+    StatutFormComponent
   ],
   imports: [
     BrowserModule,

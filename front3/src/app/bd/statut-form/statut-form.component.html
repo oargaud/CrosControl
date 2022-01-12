@@ -1,0 +1,36 @@
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header text-white bg-info">
+      <h4 class="modal-title">Formulaire nouveau statut possession</h4>
+      <button type="button" class="btn-close" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal"></button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+      <form [formGroup]="statutForm">
+        <div class="form-floating mt-3 mb-3">
+          <input type="text" class="form-control" id="statut" placeholder="statut" formControlName="statut">
+          <label for="statut">Statut</label>
+        </div>
+      </form>
+    </div>
+
+    <!--    <p>Value: {{ sagaForm.value }}</p>-->
+    <!--    <p>Form Status: {{ sagaForm.status }}</p>-->
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button (click)="validForm()"
+              [disabled]="!statutForm.valid"
+              [ngClass]="statutForm.valid ? 'btn btn-outline-success': 'btn btn-outline-danger'"
+              data-bs-target="#newBdModal"
+              data-bs-toggle="modal"
+              data-bs-dismiss="modal">
+        Valider Statut
+      </button>
+    </div>
+
+  </div>
+</div>

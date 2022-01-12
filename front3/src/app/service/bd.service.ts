@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { BdDto, ArtistDto , EditionDto , SagaDto } from '../model/model'
+import { BdDto, ArtistDto , EditionDto , SagaDto, StatutPossessionDto } from '../model/model'
 
 
 @Injectable({
@@ -109,6 +109,20 @@ export class BdService {
 
 
 
+
+  addStatutPossession(statutPossession: StatutPossessionDto): Observable<StatutPossessionDto> {
+    return this.http.post<StatutPossessionDto>(this.apiUrl+"/possession/create", statutPossession)
+      .pipe(
+//         catchError(this.handleError('addHero', hero))
+      );
+  }
+
+  getStatutPossession(): Observable<StatutPossessionDto[]> {
+    return this.http.get<StatutPossessionDto[]>(this.apiUrl+"/possession/all")
+      .pipe(
+//         catchError(this.handleError('addHero', hero))
+      );
+  }
 
 
 
