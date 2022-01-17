@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -39,16 +41,25 @@ import { StatutFormComponent } from './bd/statut-form/statut-form.component';
     GestionArtistesComponent,
     BdHeaderComponent,
     BdCardComponent,
-    StatutFormComponent
+    StatutFormComponent,
+
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+    { provide: MatDialogRef, useValue: {} }
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

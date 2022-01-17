@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { BdDto, ArtistDto , EditionDto , SagaDto ,PhotoDto  } from '../../model/model'
+import { Component, OnInit, Inject } from '@angular/core';
+// import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
+
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+
+import { BdDto, ArtistDto , EditionDto , SagaDto ,PhotoDto  } from '../../model/model'
 import { BdService } from '../../service/bd.service'
+import { BdFormComponent } from '../bd-form/bd-form.component'
 
 
 @Component({
@@ -12,19 +17,19 @@ import { BdService } from '../../service/bd.service'
 export class BdListComponent implements OnInit {
 
   listSaga: SagaDto[] = [
-                            { "name": "Lanfeust de Troy" },
-                            { "name": "Trol de Troy" },
-                            { "name": "Cixi de Troy" },
-                            { "name": "Requiem" },
-                            { "name": "Elfes" },
-                            { "name": "Nains" },
-                            { "name": "Chroniques de la lune noir" }
+//                             { "name": "Lanfeust de Troy" },
+//                             { "name": "Trol de Troy" },
+//                             { "name": "Cixi de Troy" },
+//                             { "name": "Requiem" },
+//                             { "name": "Elfes" },
+//                             { "name": "Nains" },
+//                             { "name": "Chroniques de la lune noir" }
                         ];
 
   listBd: BdDto[] = [];
 
 
-  constructor(private bdService: BdService) { }
+  constructor(private bdService: BdService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -43,13 +48,21 @@ export class BdListComponent implements OnInit {
   }
 
 
-
-
   supprimer(id: number){
     this.bdService.delBd(id).subscribe();
   }
 
+  openFormBd(){
+    const dialogConfig = new MatDialogConfig();
 
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+//     let lastname = "";
+//     let firstname = "";
+//     dialogConfig.data = { lastname , firstname };
+
+    this.dialog.open(BdFormComponent, dialogConfig);
+  }
 
 
 }

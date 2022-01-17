@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 import { BdService } from '../../service/bd.service';
 
 import { BdDto, ArtistDto , EditionDto , SagaDto } from '../../model/model'
+import { ArtistFormComponent } from '../artist-form/artist-form.component'
 
 @Component({
   selector: 'app-bd-detail',
@@ -19,7 +21,8 @@ export class BdDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private bdService: BdService,
-    private location: Location
+    private location: Location,
+    private dialog: MatDialog
   ) {}
 
 
@@ -28,6 +31,8 @@ export class BdDetailComponent implements OnInit {
     this.getBd();
   }
 
+
+
   getBd():void{
 
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -35,11 +40,19 @@ export class BdDetailComponent implements OnInit {
     this.bdService.getBd(id).subscribe(
       bd => {
         this.bd = bd;
-        console.log(bd.photos);
-
         this.retrievedImage = 'data:image/jpeg;base64,' + bd.photos;
       }
     );
   }
+
+
+  editBd(){
+    let dialogRef = this.dialog.open(ArtistFormComponent, {
+      height: '400px',
+      width: '600px',
+    });
+
+  }
+
 
 }

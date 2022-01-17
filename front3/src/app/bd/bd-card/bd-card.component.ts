@@ -41,23 +41,6 @@ export class BdCardComponent implements OnInit {
 
   }
 
-//  document.onload = ()=>{
-//     let footer = document.getElementById(this.bd.title);
-//         if(footer){
-//
-//         if(this.bd.statutPossession){
-//               this.statut = this.bd.statutPossession.statut;
-//         //       footer
-//               footer.setAttribute("style", "background:green;");
-//            }
-//            else{
-//            footer.setAttribute("style", "background:red;");
-//            }
-//
-//
-//         }
-//
-//     }
 
 
 }

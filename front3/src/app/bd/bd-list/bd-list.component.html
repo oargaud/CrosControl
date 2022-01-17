@@ -4,55 +4,13 @@
     <button class="btn btn-outline-info " data-bs-toggle="modal" data-bs-target="#newBdModal" >Ajout Bd</button>
   </div>
 
+  <div class="text-center my-5">
+    <button class="btn btn-outline-info " (click)="openFormBd()" >Ajout Bd 2</button>
+  </div>
+
   <div  class="row">
     <app-bd-card *ngFor="let bd of listBd" [bd]="bd"></app-bd-card>
   </div>
-
-<!--  <div >-->
-<!--    <div class="heading">-->
-<!--      &lt;!&ndash;      <h1>Css Responsive Flexbox Cards</h1>&ndash;&gt;-->
-<!--    </div>-->
-<!--    <div class="row ">-->
-
-<!--&lt;!&ndash;      <div class="card " *ngFor="let bd of listBd" >&ndash;&gt;-->
-<!--      <div class="card p-0" *ngFor="let bd of listBd"  routerLink="/detail/{{bd.id}}">-->
-<!--        <div class="card-header">-->
-<!--          <h4>{{bd.title}}</h4>-->
-<!--        </div>-->
-<!--        <div class="card-body">-->
-<!--          &lt;!&ndash;          <p>&ndash;&gt;-->
-<!--          &lt;!&ndash;            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.&ndash;&gt;-->
-<!--          &lt;!&ndash;          </p>&ndash;&gt;-->
-
-
-<!--          <div class="row mb-2 align-bottom">-->
-<!--            <div class="col-12 mx-auto align-bottom">-->
-<!--              &lt;!&ndash;    <img *ngIf="bd.photo" [src]="retrievedImage" class="w-100">&ndash;&gt;-->
-<!--              <img *ngIf="bd.photos[0].photo" [src]="'data:image/jpeg;base64,' + bd.photos[0].photo" class="w-100">-->
-
-<!--            </div>-->
-<!--          </div>-->
-
-
-
-<!--&lt;!&ndash;          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#confirmModal">&ndash;&gt;-->
-<!--&lt;!&ndash;            Supprimer&ndash;&gt;-->
-<!--&lt;!&ndash;          </button>&ndash;&gt;-->
-
-<!--&lt;!&ndash;                    <a (click)="supprimer(bd.id)" class="btn">Supprimer</a>&ndash;&gt;-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div  class="row">-->
-<!--        <app-bd-card *ngFor="let bd of listBd" [bd]="bd"></app-bd-card>-->
-<!--      </div>-->
-
-
-<!--    </div>-->
-<!--  </div>-->
-
-
-
 
 </div>
 

@@ -1,14 +1,14 @@
 <app-bd-header></app-bd-header>
 
 <div class="text-center my-5">
-  <button class="btn btn-outline-info ">Ajout Artiste</button>
+  <button class="btn btn-outline-info" (click)="ajoutArtiste()">Ajout Artiste</button>
 </div>
 
 <div class="row row-cols-1 row-cols-md-6 g-4 m-2">
   <div class="card h-100 mx-2 px-0" *ngFor="let artist of listArtist" >
 
     <div class="card-header py-3"></div>
-    <div class="card-body">
+    <div class="card-body" (click)="editArtist(artist)">
       <div>
         Nom : {{artist.lastname}}
       </div>
@@ -16,10 +16,9 @@
         Prénom : {{artist.firstname}}
       </div>
     </div>
+
     <div class="card-footer text-center">
-
-      <button class="btn btn-outline-danger">Supprimer</button>
-
+      <button class="btn btn-outline-danger" (click)="delArtist(artist.id)">Supprimer</button>
     </div>
 
   </div>

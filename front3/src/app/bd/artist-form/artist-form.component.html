@@ -1,12 +1,62 @@
 
-<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+<!--<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">-->
+<!--  <div class="modal-content">-->
+
+<!--    &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--    <div class="modal-header text-red bg-info">-->
+<!--      <h4 class="modal-title">Formulaire nouvel artiste</h4>-->
+<!--&lt;!&ndash;      <button class="btn btn-primary" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Retour BD</button>&ndash;&gt;-->
+<!--&lt;!&ndash;      <button type="button" class="btn-close" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal" (click)="closeModal()"></button>&ndash;&gt;-->
+<!--      <button type="button" class="btn-close"  (click)="closeModal()"></button>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Modal body &ndash;&gt;-->
+<!--    <div class="modal-body">-->
+<!--      <form [formGroup]="artistForm">-->
+
+<!--        <div class="form-floating mt-3 mb-3">-->
+<!--          <input type="text" class="form-control" id="lastname" placeholder="Nom" formControlName="lastname">-->
+<!--          <label for="lastname">Nom</label>-->
+<!--        </div>-->
+
+
+<!--        <div class="form-floating mt-3 mb-3">-->
+<!--          <input type="text" class="form-control" id="firstname" placeholder="Prénom" formControlName="firstname">-->
+<!--          <label for="firstname">Prénom</label>-->
+<!--        </div>-->
+
+<!--      </form>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Modal footer &ndash;&gt;-->
+<!--    <div class="modal-footer">-->
+<!--      <button (click)="validForm()"-->
+<!--              [disabled]="!artistForm.valid"-->
+<!--              [ngClass]="artistForm.valid ? 'btn btn-outline-success': 'btn btn-outline-danger'"-->
+<!--              data-bs-target="#newBdModal"-->
+<!--              data-bs-toggle="modal"-->
+<!--              data-bs-dismiss="modal">-->
+<!--        Valider artiste-->
+<!--      </button>-->
+<!--&lt;!&ndash;      <button class="btn btn-outline-success" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Valider artiste</button>&ndash;&gt;-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
+
+<div class="form-artist">
   <div class="modal-content">
 
     <!-- Modal Header -->
-    <div class="modal-header text-white bg-info">
+    <div class="modal-header text-red bg-info">
       <h4 class="modal-title">Formulaire nouvel artiste</h4>
-<!--      <button class="btn btn-primary" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Retour BD</button>-->
-      <button type="button" class="btn-close" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal"></button>
+      <!--      <button class="btn btn-primary" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Retour BD</button>-->
+      <!--      <button type="button" class="btn-close" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal" (click)="closeModal()"></button>-->
+      <button type="button" class="btn-close"  (click)="closeModal()"></button>
     </div>
 
     <!-- Modal body -->
@@ -37,7 +87,7 @@
               data-bs-dismiss="modal">
         Valider artiste
       </button>
-<!--      <button class="btn btn-outline-success" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Valider artiste</button>-->
+      <!--      <button class="btn btn-outline-success" data-bs-target="#newBdModal" data-bs-toggle="modal" data-bs-dismiss="modal">Valider artiste</button>-->
     </div>
 
   </div>

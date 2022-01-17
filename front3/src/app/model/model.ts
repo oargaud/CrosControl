@@ -4,25 +4,36 @@ export class Model {
 
 
 export class SagaDto{
-   constructor(
-        public  name: string
-      ) { }
+
+  id: number;
+  name: string;
+
+  public constructor(init?: Partial<SagaDto>) {
+   Object.assign(this, init);
+  }
 }
 
 
-
 export class EditionDto{
-   constructor(
-      public  name: string
-    ) { }
+
+  id: number;
+  name: string;
+
+  public constructor(init?: Partial<EditionDto>) {
+   Object.assign(this, init);
+  }
 }
 
 
 export class ArtistDto{
-   constructor(
-      public  lastname: string,
-      public  firstname: string
-    ) { }
+
+  id: number;
+  lastname: string;
+  firstname: string;
+
+  public constructor(init?: Partial<ArtistDto>) {
+    Object.assign(this, init);
+  }
 }
 
 
