@@ -1,0 +1,14 @@
+<p>control-card works!</p>
+
+<mat-card (click)="toggle(control.id)" [style.background]="control.status ? 'green': 'red'">
+  <mat-card-title>
+    {{control.name}}
+  </mat-card-title>
+  <mat-card-content>
+    id = {{control.id}}
+  </mat-card-content>
+  <mat-card-footer>
+    etat = {{control.status}}
+  </mat-card-footer>
+</mat-card>
+

@@ -17,6 +17,7 @@ import { BdFormComponent } from './bd/bd-form/bd-form.component';
 import { BdTableComponent } from './bd/bd-table/bd-table.component';
 import { BdListeComponent } from './bd/bd-liste/bd-liste.component';
 import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
+import { ControlCardComponent } from './control/control-card/control-card.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
     BdFormComponent,
     BdTableComponent,
     BdListeComponent,
-    BdDetailComponent
+    BdDetailComponent,
+    ControlCardComponent
   ],
   imports: [
     BrowserModule,
