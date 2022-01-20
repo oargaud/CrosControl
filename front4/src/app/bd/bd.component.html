@@ -1,1 +1,22 @@
-<p>bd works!</p>
+
+<div class="header">
+
+  <button mat-icon-button color="primary" (click)="newBd()">
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <mat-slide-toggle [(ngModel)]="vueListe" align="end">
+  </mat-slide-toggle>
+
+</div>
+
+
+<div *ngIf="vueListe">
+  <app-bd-liste></app-bd-liste>
+</div>
+
+
+
+<div *ngIf="!vueListe">
+  <app-bd-table></app-bd-table>
+</div>

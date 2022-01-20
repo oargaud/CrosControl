@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { BdComponent } from './bd/bd.component';
 // import { ChatComponent } from './chat/chat.component';
 // import { PhotoComponent } from './photo/photo.component';
-// import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
+import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
 // import { GestionArtistesComponent } from './bd/gestion-artistes/gestion-artistes.component';
 
 
@@ -19,7 +19,7 @@ const routes: Routes = [
 //   { path: 'chat', component: ChatComponent},
 //   { path: 'photo', component: PhotoComponent},
 //   { path: 'gestion_artistes', component: GestionArtistesComponent},
-//   { path: 'detail/:id', component: BdDetailComponent }
+  { path: 'detail/:id', component: BdDetailComponent }
 ];
 
 @NgModule({

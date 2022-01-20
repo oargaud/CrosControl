@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-success {
+    background-color: white;
+    color: green;
+}
+.mat-success:hover {
+    background-color: #aaffaa;
+    color: green;
+}

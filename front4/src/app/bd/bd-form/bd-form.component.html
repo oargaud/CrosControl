@@ -1,0 +1,147 @@
+
+<!--<button mat-button mat-dialog-close>close</button>-->
+<mat-icon mat-dialog-close aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+<p>bd-form works!</p>
+
+<mat-dialog-content>
+
+<form class="example-form" [formGroup]="bdForm">
+
+
+
+<!--  <mat-form-field class="example-full-width" appearance="fill">-->
+<!--    <mat-label>Favorite food</mat-label>-->
+<!--    <input matInput placeholder="Ex. Pizza" [value]=title >-->
+<!--  </mat-form-field>-->
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-select [(ngModel)]="selected2">
+      <mat-option *ngFor="let option of options2" [value]="option.id">{{ option.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Tome</mat-label>
+    <input matInput formControlName="tome">
+  </mat-form-field>
+
+
+
+  <mat-form-field class="example-full-width" appearance="fill" >
+    <mat-label>Saga</mat-label>
+    <mat-select formControlName="saga" [(ngModel)]="sagaSelected">
+      <mat-option *ngFor="let saga of listSaga" [value]="saga" >
+        {{saga.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Edition</mat-label>
+    <mat-select id="edition" formControlName="edition" [(ngModel)]="editionSelected">
+      <mat-option *ngFor="let edition of listEdition" [value]="edition" >
+        {{edition.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+  <div formArrayName="scenaristes" >
+    <h6>Scénaristes</h6>
+    <div  *ngFor="let scenariste of scenaristes.controls; let i=index" [formControlName]="i">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label  >Scénariste</mat-label>
+        <mat-select name="scenariste" id="scenariste-{{i}}" [formControlName]="i" >
+          <mat-option> NONE </mat-option>
+          <mat-option *ngFor="let artiste of listArtist" [value]="artiste">{{artiste.lastname}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-stroked-button color="primary" (click)="creerArtiste()">Créer un artiste</button>
+      <button mat-stroked-button color="warn" (click)="removeScenariste(i)">Supprimer</button>
+    </div>
+    <div>
+      <button mat-stroked-button color="primary" (click)="addScenariste()">Ajouter un scénariste</button>
+    </div>
+  </div>
+
+
+
+  <div formArrayName="illustrateurs" >
+    <h6>Scénaristes</h6>
+    <div  *ngFor="let illustrateur of illustrateurs.controls; let i=index" [formControlName]="i">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label  >Illustrateur</mat-label>
+        <mat-select name="illustrateur" id="illustrateur-{{i}}" [formControlName]="i" >
+          <mat-option> NONE </mat-option>
+          <mat-option *ngFor="let artiste of listArtist" [value]="artiste">{{artiste.lastname}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-stroked-button color="primary" (click)="creerArtiste()">Créer un artiste</button>
+      <button mat-stroked-button color="warn" (click)="removeIllustrateur(i)">Supprimer</button>
+    </div>
+    <div>
+      <button mat-stroked-button color="primary" (click)="addIllustrateur()">Ajouter un illustrateur</button>
+    </div>
+  </div>
+
+
+
+
+  <div >
+    <label for="file">Couverture</label>
+    <button type="button" mat-stroked-button color="primary" (click)="fileInput.click()">Parcourir</button>
+    <input hidden type="file" #fileInput id="file" #file accept="image/png, image/jpeg" requiredFileType="image"  (change)="onFileChanged($event)">
+    <button mat-stroked-button color="warn" (click)="supprimerFichier()" >Supprimer</button>
+  </div>
+  <div>
+    <div>
+<!--      <img *ngIf="selectedFile" [src]="url" style="width:50%">-->
+      <img *ngIf="url" [src]="url" style="width:50%">
+    </div>
+  </div>
+
+
+
+  <div >
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Statut</mat-label>
+      <mat-select name="statutPossession" id="statutPossession" formControlName="statutPossession">
+        <mat-option *ngFor="let statut of listStatutPossession" [value]="statut">{{ statut.statut }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-stroked-button color="primary" type="button">Créer un statut</button>
+  </div>
+
+
+
+  <div>
+    <p>Form Status: {{ bdForm.status }}</p>
+    <p>Form Value: {{ bdForm.value|json }}</p>
+  </div>
+
+
+
+  <div>
+    <button mat-stroked-button [disabled]="!bdForm.valid" [ngClass]="{'mat-warn' : !bdForm.valid , 'mat-success' : bdForm.valid}" (click)="validForm()" >
+      Valider bd
+    </button>
+  </div>
+
+
+
+</form>
+
+
+</mat-dialog-content>

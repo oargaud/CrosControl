@@ -1,0 +1,19 @@
+
+
+<mat-card routerLink="/detail/{{bd.id}}">
+
+  <mat-card-header >
+    <mat-card-title>{{bd.title}}</mat-card-title>
+  </mat-card-header>
+
+
+  <img *ngIf="bd.photos[0].photo" [src]="'data:image/jpeg;base64,' + bd.photos[0].photo" class="couv">
+
+
+  <mat-card-footer style="background:{{couleur}}">
+      <h4> {{statut}} </h4>
+  </mat-card-footer>
+
+</mat-card>
+
+
