@@ -8,6 +8,8 @@ import { MaterialExampleModule } from '../material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 
+import { RxStompService } from '@stomp/ng2-stompjs'
+import { ProgressWebsocketService } from './service/progress.websocket.service';
 
 import { HomeComponent } from './home/home.component';
 import { ControlComponent } from './control/control.component';
@@ -42,7 +44,12 @@ import { ControlCardComponent } from './control/control-card/control-card.compon
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    RxStompService,
+    ProgressWebsocketService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

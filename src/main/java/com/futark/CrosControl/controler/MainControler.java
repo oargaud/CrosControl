@@ -3,7 +3,7 @@ package com.futark.CrosControl.controler;
 
 
 import com.futark.CrosControl.model.CommandeEsp;
-import com.futark.CrosControl.mqtt.testMQTT;
+//import com.futark.CrosControl.mqtt.testMQTT;
 import com.futark.CrosControl.repository.CommandeEspRepository;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,16 +50,16 @@ public class MainControler {
     }
 
 
-    @RequestMapping(
-            value = "/mqtt",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public void testmqtt() throws Exception {
-
-        new testMQTT();
-
-    }
+//    @RequestMapping(
+//            value = "/mqtt",
+//            method = RequestMethod.GET,
+//            produces = MediaType.APPLICATION_JSON_VALUE
+//    )
+//    public void testmqtt() throws Exception {
+//
+//        new testMQTT();
+//
+//    }
 
 
 
