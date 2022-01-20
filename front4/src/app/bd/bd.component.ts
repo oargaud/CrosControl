@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
-import { BdDto, ArtistDto , EditionDto , SagaDto ,PhotoDto  } from '../model/model'
+import { BdDto, ArtistDto , EditionDto , SagaDto ,PhotoDto  } from '../model/bd-model'
 import { BdFormComponent } from './bd-form/bd-form.component'
 
 @Component({

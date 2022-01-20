@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
-import { BdDto } from '../../model/model'
+import { BdDto } from '../../model/bd-model'
 import { BdService } from '../bd.service';
 import { BdFormComponent } from '../bd-form/bd-form.component'
 

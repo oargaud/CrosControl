@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BdDto } from '../../model/model'
+import { BdDto } from '../../model/bd-model'
 
 @Component({
   selector: 'app-bd-card',

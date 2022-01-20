@@ -3,7 +3,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
-import { BdDto } from '../../model/model'
+import { BdDto } from '../../model/bd-model'
 import { BdService } from '../bd.service'
 
 

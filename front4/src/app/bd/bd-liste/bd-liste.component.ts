@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BdDto } from '../../model/model'
+import { BdDto } from '../../model/bd-model'
 import { BdService } from '../bd.service'
 
 @Component({

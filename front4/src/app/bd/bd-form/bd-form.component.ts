@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup, FormControl, FormArray } from '@ang
 import { HttpParams, HttpClient } from '@angular/common/http';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
-import { BdDto, ArtistDto, EditionDto, SagaDto, StatutPossessionDto } from '../../model/model'
+import { BdDto, ArtistDto, EditionDto, SagaDto, StatutPossessionDto } from '../../model/bd-model'
 
 import { BdService } from '../bd.service';
 
