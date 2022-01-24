@@ -18,7 +18,7 @@ export class FixedStompConfig extends InjectableRxStompConfig {
 import { WebSocketService } from './websocket.service';
 import { WebSocketOptions } from '../model/websocket/';
 
-export const progressStompConfig: FixedStompConfig = {
+export const controlWebsocketService: FixedStompConfig = {
   webSocketFactory: () => {
 //     return new WebSocket('ws://localhost:8080/stomp');
     return new WebSocket('ws://93.9.238.159:8080/stomp');
@@ -26,12 +26,12 @@ export const progressStompConfig: FixedStompConfig = {
 };
 
 @Injectable()
-export class ProgressWebsocketService extends WebSocketService {
+export class ControlWebsocketService extends WebSocketService {
   constructor(stompService: RxStompService) {
     super(
       stompService,
-      progressStompConfig,
-      new WebSocketOptions('/topic/progress')
+      controlWebsocketService,
+      new WebSocketOptions('/topic/control')
     );
   }
 }

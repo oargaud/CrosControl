@@ -24,7 +24,8 @@ export class BdService {
 //   webSocket: WebSocket;
   listSaga: SagaDto[] = [];
 
-  apiUrl: string = "http://localhost:8080";
+//   apiUrl: string = "http://localhost:8080";
+  apiUrl: string = "http://93.9.238.159:8080";
 
   constructor(private http: HttpClient) { }
 

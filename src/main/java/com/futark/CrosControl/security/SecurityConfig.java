@@ -26,12 +26,50 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/stomp").permitAll()
-                .antMatchers("/bd/*").permitAll()
-                .antMatchers("/commandeesp/*").permitAll()
+
+                .antMatchers("/").permitAll()
+
+                .antMatchers(
+                        "/stomp",
+                        "/bd/*",
+                        "/commandeesp/*")
+//                .permitAll()
+                .access("hasAnyRole(" +
+                        "'ROLE_USER'," +
+                        " 'ROLE_ADMIN'," +
+                        "'ROLE_SUPER_ADMIN')")
+
                 .anyRequest()
                 .authenticated();
         // @formatter:on
+
+
+//
+//        // Config for Login Form
+//        http.authorizeRequests().and().formLogin()//
+//                // Submit URL of login page.
+//                .loginProcessingUrl("/j_spring_security_check") // Submit URL
+//                .loginPage("/login")//
+//                .defaultSuccessUrl("/home")//
+//                .failureUrl("/login?error=true")//
+////                .failureUrl("/error")//
+//                .usernameParameter("username")//
+//                .passwordParameter("password")
+//                // Config for Logout Page
+//                .and().logout().logoutUrl("/logout")
+//                .logoutSuccessUrl("/login").deleteCookies("auth_code", "JSESSIONID").invalidateHttpSession(true);
+
+        // Config Remember Me.
+//        http.authorizeRequests().and() //
+//                .rememberMe().tokenRepository(this.persistentTokenRepository()) //
+//                .tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
+
+
+
+
+
+
+
     }
 
     /**

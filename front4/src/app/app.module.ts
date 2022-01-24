@@ -10,6 +10,7 @@ import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 
 import { RxStompService } from '@stomp/ng2-stompjs'
 import { ProgressWebsocketService } from './service/progress.websocket.service';
+import { ControlWebsocketService } from './service/control.websocket.service';
 
 import { HomeComponent } from './home/home.component';
 import { ControlComponent } from './control/control.component';
@@ -20,6 +21,7 @@ import { BdTableComponent } from './bd/bd-table/bd-table.component';
 import { BdListeComponent } from './bd/bd-liste/bd-liste.component';
 import { BdDetailComponent } from './bd/bd-detail/bd-detail.component';
 import { ControlCardComponent } from './control/control-card/control-card.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { ControlCardComponent } from './control/control-card/control-card.compon
     BdTableComponent,
     BdListeComponent,
     BdDetailComponent,
-    ControlCardComponent
+    ControlCardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { ControlCardComponent } from './control/control-card/control-card.compon
   ],
   providers: [
     RxStompService,
-    ProgressWebsocketService
+    ProgressWebsocketService,
+    ControlWebsocketService
   ],
   bootstrap: [
     AppComponent

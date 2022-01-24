@@ -29,10 +29,13 @@ export class BdComponent implements OnInit {
 //     dialogConfig.width ="100%";
 //     let lastname = "";
 //     let firstname = "";
-//     dialogConfig.data = { lastname , firstname };
+    dialogConfig.data = new BdDto();
 
     this.dialog.open(BdFormComponent, dialogConfig);
   }
+
+
+
 
 
 
